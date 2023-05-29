@@ -201,3 +201,26 @@ doc.isDirectModified('documents') // false
 ```
 
 user.js 내부의 save 훅 메서드를 분리해주었다.
+
+5. server.js의 express 객체 설정
+
+다음과 같은 절차로 설정한다
+
+```
+app.use
+
+1. view engine 세팅
+2. body-parser 세팅
+    - req.body 를 사용하기위해 필요하다.
+    - express.unlencoded와 express.json으로대체
+3. session 세팅
+    - 아직 Db연결이 안되었으므로, store값은 주석처리 해주었다.
+
+4. 기타 middleware 세팅
+    morgan, localsMiddleware(res.locals로 pug에 변수제공)
+
+5. express.static으로 server-side에서 보내줄 파일들의 폴더를 지정.
+
+6. 기타 라우터 연결
+    root, api, video, user를 각각연결해주었다.
+```
