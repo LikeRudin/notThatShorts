@@ -224,3 +224,52 @@ app.use
 6. 기타 라우터 연결
     root, api, video, user를 각각연결해주었다.
 ```
+
+6. db.js 에서 mongoDb 설정 및 연결
+
+다음과 같은 절차로 설정한다
+
+```
+mongoose.connect("MONGODB URL", {
+    connectoption object
+});
+
+const db = mongoose.connection;
+
+db.on("error", ()=> {print error});
+db.once("open", ()=> {print success message});
+```
+
+여기서 db (mongoose.connection)은 eventEmitter를 상속받는 객체이다.
+
+https://nodejs.dev/en/learn/the-nodejs-event-emitter/
+
+once는 한번 실행후 자동으로 이벤트리스너가 제거된다.
+일회용 on이라고 생각하자
+
+다음 init.js에
+
+import "./db" 를 추가해준다.
+
+7. init.js 파일 코드작성
+
+server.js에서 만든 app (express 인스턴스) 를 실제로
+실행하는 곳이다.
+
+아래와 같이 특정 컴포넌트 사용없이 그저 파일을 import 해주는것은
+해당 파일들을 실행하기 위해서이다.
+
+```
+import "regenerator-runtime";
+import "./db";
+import "./models/Video";
+import "./models/User";
+import "./models/Comment";
+```
+
+다음과 같은 절차로 구성한다.
+
+```
+1. PORT 변수 생성
+2. app.listen(PORT, ()=> {서버의 시작을 print 한다})
+```
