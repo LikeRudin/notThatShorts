@@ -1,0 +1,54 @@
+{
+  "name": "notthatshorts",
+  "version": "1.0.0",
+  "description": "final-project of 10 weeks study",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LikeRudin/notThatShorts.git"
+  },
+  "author": "youngJin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LikeRudin/notThatShorts/issues"
+  },
+  "homepage": "https://github.com/LikeRudin/notThatShorts#readme",
+  "dependencies": {
+    "pug": "*",
+    "mongoose": "*",
+    "morgan": "*",
+    "bcrypt": "*",
+    "multer": "*",
+    "aws-sdk": "*",
+    "multer-s3": "*",
+    "@ffmpeg/core": "*",
+    "@ffmpeg/ffmpeg": "*",
+
+    "connect-mongo": "*",
+    "dotenv": "*",
+    "express": "*",
+    "express-flash": "*",
+    "express-session": "*",
+    "node-fetch": "*",
+    "regenerator-runtime": "*"
+  },
+
+  "devDependencies": {
+    "@babel/cli": "*",
+    "@babel/core": "*",
+    "@babel/node": "*",
+    "@babel/plugin-transform-runtime": "*",
+    "@babel/preset-env": "*",
+    "babel-loader": "*",
+    "css-loader": "*",
+    "mini-css-extract-plugin": "*",
+    "nodemon": "*",
+    "sass": "*",
+    "sass-loader": "*",
+    "style-loader": "*",
+    "webpack": "*",
+    "webpack-cli": "*"
+  }
+}
