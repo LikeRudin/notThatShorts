@@ -217,7 +217,7 @@ app.use
     - 아직 Db연결이 안되었으므로, store값은 주석처리 해주었다.
 
 4. 기타 middleware 세팅
-    morgan, localsMiddleware(res.locals로 pug에 변수제공)
+    morgan, localsMiddleware(res.locals로 pug에 변수제공) , flash 등
 
 5. express.static으로 server-side에서 보내줄 파일들의 폴더를 지정.
 
