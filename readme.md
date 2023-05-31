@@ -265,6 +265,10 @@ import "./db";
 import "./models/Video";
 import "./models/User";
 import "./models/Comment";
+
+
+client/js/layout/main.js도 같은기능을한다.
+
 ```
 
 다음과 같은 절차로 구성한다.
