@@ -1,4 +1,4 @@
-FFmpeg: records and converts media Stream
+# FFmpeg: records and converts media Stream
 
 파일을 기록하고 변환하는 패키지
 
@@ -293,4 +293,75 @@ String global object
 
 ```
 remove URL
+```
+
+# combination of use
+
+this is process to convert webm file to mp4
+
+1. creating webm
+
+```
+dataonavailable
+
+event.data
+```
+
+2. init ffmpeg
+
+```
+new ffmpeg({log:true})
+
+ffmpeg.load()
+```
+
+3. bring webmblob on ffmpeg
+
+```
+ffmpeg.FS("writeFile", "filename on ffmpeg" fetchFile(webmblob));
+```
+
+4. convert to mp4
+
+```
+ffmpeg.run("-i", "second arg on 3", "output option", "outputfilename")
+```
+
+5. read converted file on ffmpeg, save at variable
+
+```
+const myFile = ffmpeg.FS("readFile", "outputfilename");
+```
+
+6. creating blob for myFile
+
+```
+const mp4Blob = new Blob([myfile.buffer], {type:"video/mp4"});
+```
+
+7. making URL
+
+```
+const mp4URl = URL.createObjectURL(mp4Blob)
+```
+
+8. handle download
+
+```
+create a tag
+
+a.href = mp4URL:
+a.download = "filename for saving on pc.mp4"
+
+append a on document.body
+
+a.click()
+```
+
+9. remove datas on web
+
+```
+ffmpeg.FS("unlink", "outputFilename");
+
+URL.revokeObjectURL(mp4URL)
 ```
