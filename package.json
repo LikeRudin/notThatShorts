@@ -16,39 +16,33 @@
   },
   "homepage": "https://github.com/LikeRudin/notThatShorts#readme",
   "dependencies": {
-    "pug": "*",
-    "mongoose": "*",
-    "morgan": "*",
-    "bcrypt": "*",
-    "multer": "*",
-    "aws-sdk": "*",
-    "multer-s3": "*",
-    "@ffmpeg/core": "*",
-    "@ffmpeg/ffmpeg": "*",
-
-    "connect-mongo": "*",
-    "dotenv": "*",
-    "express": "*",
-    "express-flash": "*",
-    "express-session": "*",
-    "node-fetch": "*",
-    "regenerator-runtime": "*"
-  },
-
-  "devDependencies": {
-    "@babel/cli": "*",
-    "@babel/core": "*",
-    "@babel/node": "*",
-    "@babel/plugin-transform-runtime": "*",
-    "@babel/preset-env": "*",
-    "babel-loader": "*",
-    "css-loader": "*",
-    "mini-css-extract-plugin": "*",
-    "nodemon": "*",
-    "sass": "*",
-    "sass-loader": "*",
-    "style-loader": "*",
-    "webpack": "*",
-    "webpack-cli": "*"
-  }
+    "@ffmpeg/core": "^0.11.0",
+    "@ffmpeg/ffmpeg": "^0.11.6",
+    "bcrypt": "^5.1.0",
+    "connect-mongo": "^5.0.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^7.0.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^2.6.1",
+    "pug": "^3.0.2"
+},
+"devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.22.1",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.4",
+    "mini-css-extract-plugin": "^2.7.6",
+    "nodemon": "^2.0.22",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.3.0",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.84.0",
+    "webpack-cli": "^5.1.1"
+}
 }
