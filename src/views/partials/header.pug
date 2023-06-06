@@ -1,0 +1,32 @@
+<!-- nav links
+
+basic: go home , search video
+
+loggedIn: upload, edit profile, logout
+
+not loggedIn : Login Join-->
+
+
+header 
+    nav.basic
+    ul
+        li  
+            a(href="/") home 
+        li
+            a(href="/search") search
+    if loggedIn
+        nav
+            ul
+                li 
+                    a(href="/videos/upload") upload
+                li
+                    a(href="users/edit") Edit profile
+                li 
+                    a(href="/users/logout") logout
+    else 
+        nav
+            ul 
+                li 
+                    a(href="/login") Login 
+                li   
+                    a(href="/join") Join

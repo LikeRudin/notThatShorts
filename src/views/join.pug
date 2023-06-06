@@ -1,0 +1,35 @@
+extends layout 
+
+block content
+    form(method="POST")
+        div.labelinput
+            label(for="join_name") Name
+            input(type="text", name="name", required, placeholder="write Name")#join_name
+        div.labelinput
+            label(for="join_username") Unique UserName  
+            input(type="text", name="username", required, placeholder="write Username")
+        div.labelinput
+            label(for="join_email") Unique email 
+            input(type="email", name="email", required, placeholder="e-mail")#join_email
+        div.labelinput
+            label(for="join_location") Location
+            input(type="text", name="location", required, placeholder="write location you are staying in")#join_location
+        div.labelinput
+            label(for="join_password") Password
+            input(type="password", name="password1", required, placeholder="set password")#join_password
+        div.labelinput
+            label(for="join_password") Password confirmation
+            input(type="password", name="password2", required, placeholder="check password")#join_password_confirmation
+        input(type="submit", value="Join")
+    if errorMessage 
+        span=errorMessage
+    else
+        span join now! 
+    div 
+        span already have an account?
+        a(href="/login") Login now! &rarr;
+
+
+
+
+    

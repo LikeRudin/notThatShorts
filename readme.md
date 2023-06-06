@@ -44,8 +44,7 @@ not that shorts
         video-page.pug
     /client
         /js
-            /layout
-                main.js
+            main.js
             /upload
                 recorder.js
             /videopage
@@ -277,3 +276,10 @@ client/js/layout/main.js도 같은기능을한다.
 1. PORT 변수 생성
 2. app.listen(PORT, ()=> {서버의 시작을 print 한다})
 ```
+
+# 230606
+
+현재 배포제외 모든 강의 수강을 완료했다.
+일단 천천히 따라가며 버그픽스를 하고, 원하는 기능을 추가하자
+
+적어도 8일까지는 목업 프로그램을 배포해야한다

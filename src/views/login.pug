@@ -1,0 +1,19 @@
+extends layout 
+
+
+block content 
+    form(method="POST")
+        div.labelinput
+            label(for="login_name") Name
+            input(name="username", type="text", placeholder="write name", required)#login_name
+        div.labelinput
+            label(for="login_password") Password
+            input(name="password", type="password", placeholder="write password", required)#login_password
+        input(type="submit", value="Login")
+    if errorMessage 
+        span=errorMessage
+    else 
+        span welcome!
+    div 
+        span Don't have an account yet?
+        a(href="/join") Create an account, Join now &rarr;

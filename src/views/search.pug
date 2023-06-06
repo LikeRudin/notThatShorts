@@ -1,0 +1,16 @@
+extends layout 
+
+include mixins/video
+
+block content
+    form(method="GET")
+        div.labelinput
+            label(for="search_title") Title
+            input(type="text", name="keyword", placeholder="search videos by title" required)#search_title
+        button Search! 
+
+    div.video-grid
+        each video in videos
+            +video(video)
+        else
+            span.empty__message No videos found
