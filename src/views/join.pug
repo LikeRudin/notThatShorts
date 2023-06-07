@@ -21,6 +21,7 @@ block content
             label(for="join_password") Password confirmation
             input(type="password", name="password2", required, placeholder="check password")#join_password_confirmation
         input(type="submit", value="Join")
+        include partials/social-login
     if errorMessage 
         span=errorMessage
     else

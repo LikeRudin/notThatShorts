@@ -2,24 +2,25 @@
 /**save variables for template engine */
 export const localsMiddleware = (req, res, next) => {
     
-res.locals.loggedIn = Boolean(req.session.loggedIn);
-res.locals.siteName = "NotThatShorts";
-res.locals.loggedInUser =  req.session.user || {};
+    res.locals.loggedIn = Boolean(req.session.loggedIn);
+    res.locals.siteName = "NotThatShorts";
+    res.locals.loggedInUser = req.session.user || {};
+    next();
 };
 
 /**block client not logged in  */
 export const protectorMiddleware = (req, res, next) => {
-    if(req.session.loggedin) {
-    return next();
+    if(req.session.loggedIn) {
+        return next();
     } else {
-    req.flash("error", "Not authorized");
-    return res.redirect("/login");
+        req.flash("error", "Not authorized");
+        return res.redirect("/login");
     }
 };
 
 /**block client logged in */
 export const publicOnlyMiddleware = (req, res, next) =>{
-    if(!req.session.loggedin){
+    if(!req.session.loggedIn){
         return next();
     } else {
     req.flash("error", "Not authorized");

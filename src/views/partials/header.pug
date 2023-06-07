@@ -1,12 +1,3 @@
-<!-- nav links
-
-basic: go home , search video
-
-loggedIn: upload, edit profile, logout
-
-not loggedIn : Login Join-->
-
-
 header 
     nav.basic
     ul
@@ -18,11 +9,21 @@ header
         nav
             ul
                 li 
-                    a(href="/videos/upload") upload
+                    a(href="/videos/upload") Upload
                 li
-                    a(href="users/edit") Edit profile
+                    a(href="/users/edit") Edit profile
                 li 
-                    a(href="/users/logout") logout
+                    a(href="/users/logout") Logout
+                li
+                    a(href=`/users/${loggedInUser._id}`)
+                        if loggedInUser.avatarUrl === ""
+                            span 👻
+                        else
+                            if loggedInUser.avatarUrl
+                                if loggedInUser.avatarUrl.includes("github")
+                                    img.header__avatar(src=loggedInUser.avatarUrl)
+                                else
+                                    img.header__avatar(src=loggedInUser.avatarUrl)
     else 
         nav
             ul 

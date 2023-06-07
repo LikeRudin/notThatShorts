@@ -283,3 +283,42 @@ client/js/layout/main.js도 같은기능을한다.
 일단 천천히 따라가며 버그픽스를 하고, 원하는 기능을 추가하자
 
 적어도 8일까지는 목업 프로그램을 배포해야한다
+
+# 230607
+
+github login
+
+Oauth 를 제대로 클리어했다.
+
+1. github에 post -> code를 반환
+2. client_id, client_secretm code -> access_token
+3. access_token을 사용해서 email을 찾기
+4. 해당 email, github ID가 DB에 존재시 로그인 / 비존재시 User.create({})
+
+github login 및 프로파일 확인 과정을 직접 확인하기위해
+프로그램을 실행하여 진행했다.
+
+남은 작업리스트
+
+- pug
+
+  - upload.pug
+  - edit.pug
+  - users/profile.pug
+  - video-page.pug
+
+- router: video Router
+- router: api Router
+
+- controller: video Controller-video Router
+
+  - watch
+  - getEdit
+  - postEdit
+  - getUpload
+  - postupload
+  - deleteVideo
+
+- controller: video controller-api Router
+  - register view
+  - create comment

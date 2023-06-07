@@ -1,1 +1,23 @@
 extends layout 
+
+block content
+    form(method="POST", enctype="multipart/form-data").edit-profile__form
+        div 
+            label(for="edit-profile_avatar") Avatar
+            input(type="file", name="avatar", accept="image/*")#edit-profile_avatar
+        div 
+            label(for="edit-profile_name") Name
+            input(type="text", name="name", placeholder="Name" required, value=loggedInUser.name)#edit-profile_name
+        div 
+            label(for="edit-profile_username") Username
+            input(type="text", name="username", placeholder="Username", required, value=loggedInUser.username)#edit-profile_username
+        div 
+            label(for="edit-profile_email") E-mail
+            input(type="email", name="email", placeholder="Email", required, value=loggedInUser.email)#edit-profile_email
+        div 
+            label(for="edit-profile_location") Location
+            input(type="text", name="location", placeholder="Location", required, value=loggedInUser.location)#edit-profile_location
+        input(type="submit", value="Update profile!")
+        if !loggedInUser.socialOnly
+            div.edit-profile__password
+                a(href="change-password") Change Password &rarr;

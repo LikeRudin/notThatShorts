@@ -1,11 +1,12 @@
 
-import Video from "src/models/Video.js"
+import Video from "../models/Video"
 
 //for RootRouter
 
 /**render home */
-export const getHome = async (req,res)=> {
-    const videos = await Video.find({}).sort({ createdAt: "desc"}).populate("owner");
+export const getHome = async (req, res)=> {
+    console.log("get Home is running");
+    const videos = await Video.find({}).sort({ createdAt: "desc" });
     return res.render("home", {pageTitle:"Home", videos: videos});
 };
 
