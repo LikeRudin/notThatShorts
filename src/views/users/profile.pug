@@ -1,1 +1,21 @@
 extends ../layout 
+include ../mixins/video
+
+block content 
+    div.user_data
+        h1 #{user.name}'s profile
+        ul 
+            li 
+                img(src="/" + user.avatarUrl)
+            li
+                span=user.email 
+    div.user-uploaded
+        div.user-videos
+            h1 #{user.name}'s video
+            div
+                each video in user.videos 
+                    +video(video)
+                else
+                    span not uploaded yet
+
+        div.user-comments
