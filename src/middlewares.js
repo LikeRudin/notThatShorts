@@ -1,3 +1,4 @@
+import multer from "multer";
 
 /**save variables for template engine */
 export const localsMiddleware = (req, res, next) => {
@@ -27,3 +28,9 @@ export const publicOnlyMiddleware = (req, res, next) =>{
     return res.redirect("/");
     }
 };
+
+
+export const videoUpload = multer({
+    dest: "/uploads/videos",
+    limits: { filesize: 10000000},
+});

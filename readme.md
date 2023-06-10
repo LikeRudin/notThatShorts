@@ -302,23 +302,40 @@ github login 및 프로파일 확인 과정을 직접 확인하기위해
 
 - pug
 
-  - upload.pug
-  - edit.pug
-  - users/profile.pug
   - video-page.pug
 
-- router: video Router
 - router: api Router
-
-- controller: video Controller-video Router
-
-  - watch
-  - getEdit
-  - postEdit
-  - getUpload
-  - postupload
-  - deleteVideo
 
 - controller: video controller-api Router
   - register view
   - create comment
+
+# 230610
+
+남은 작업리스트
+
+- router: api Router
+
+- controller: video controller-api Router
+
+  - register view
+  - create comment
+
+- frontend part
+  - video player
+  - comment Secction
+- webpack
+
+## small HTML 태그
+
+    작은 글씨를 나타낼 때 사용한다.
+    small 과 css중 어떤것을 사용할지는 사용자의맘
+
+    하지만 css 컨트롤을 편하게 하기위해 small을 도입하자
+
+```
+    https://developer.mozilla.org/ko/docs/Web/HTML/Element/small
+```
+
+watch pug는 강의내용과 똑같아지는거같아 걱정이다.
+일단 배포 및 제출은 해야되니 빨리 구현부터 하고 수정하자

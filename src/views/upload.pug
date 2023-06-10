@@ -1,1 +1,27 @@
 extends layout 
+
+
+block content
+    div.upload__container
+        form(method="POST", enctype="multipart/form-data")
+            div.upload__container__div-file
+                div.labelinput
+                    label(for="upload_file") Video file
+                    input(name="video", type="file", required, accept="video/*")#upload_file
+                div.labelinput
+                    label(for="upload_thumb") Thumbnail
+                    input(name="thumb", type="file", required, accept="image/*")#upload_thumb              
+            div.upload__container__div-data
+                div.labelinput
+                    label(for="upload_title") Title
+                    input(name="title", type="text", required, maxlength=30, placeholder="Title")#upload_title
+                div.labelinput
+                    label(for="upload_description") Description
+                    input(name="description", type="text", required, minlength=10, placeholder="Description, more than 10chars")#upload_description
+                div.labelinput
+                    label(for="upload_hashtags") Hashtags
+                    input(name="hashtags", type="text", required, placeholder="Hashtags, seperated by comma")#upload_hashtags
+            input(type="submit", value="Upload Video")
+        if errorMessage
+            span=errorMessage
+
