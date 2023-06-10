@@ -68,6 +68,7 @@ export const postJoin= async (req, res) =>{
             email,
             password: password1,
             location,
+            avatarUrl: "uploads/avatars/logo.jpg",
         });
         return res.redirect("/login")
     } catch (e) {
@@ -90,14 +91,16 @@ export const getEdit = (req, res) => {
 };
 
 /**handle editing user profile*/
-export const postEdit = async(req, res) =>{
+export const postEdit = async (req, res) =>{
+    console.log("postEdit is running");
     const {
         session: {
-            user: { _id, avatarUrl, email:sessionEmail, username:sessionUsername, },
+            user: { _id, avatarUrl, email: sessionEmail, username: sessionUsername, },
         },
-        body: { name, email, username, location },
         file,
     } = req;
+    const { name, email, username, location } = req.body;
+    console.log(`${name}, ${email}, ${username}, ${location}` );
 
     let searchParam = [];
 
@@ -117,27 +120,27 @@ export const postEdit = async(req, res) =>{
         }
     }
     
-    const updatedUser = await User.findByIdAndUpdate(
-        _id,
-        {
-            avatarUrl: file.path || avatarUrl,
+    const updatedUser = await User.findByIdAndUpdate(_id, {
+            avatarUrl: file? file.path : avatarUrl,
             name,
             email,
             username,
             location, 
-        },
-        { new: true }
+    },
+        { 
+            new: true 
+        }
     );
+    console.log(updatedUser);
     req.session.user = updatedUser;
     return res.redirect("/users/edit");    
 };
-
 /**destroy session */
 export const logout = (req, res) => {
     console.log("logout is running");
     
     req.session.user = null;
-    res.locals.loggedInUser = req.session.user;
+    res.locals.loggedInUser = null;
     req.session.loggedIn = false;
 
     req.flash("info", "See you");
@@ -245,7 +248,7 @@ export const finishGithubLogin = async (req, res) => {
 
             if(!user) {
                 user = await User.create({
-                    avatarUrl: userData.avatarUrl,
+                    avatarUrl: "uploads/avatars/logo.jpg",
                     name : userData.name? userData.name : userData.login,
                     username: userData.login,
                     email: emailObj.email,
@@ -271,15 +274,15 @@ export const getProfile = async (req, res) => {
         path: "videos",
         populate: {
             path: "owner",
-            mode: "User",
+            model: "User",
         },
     });
     if (!user) {
         return res.status(404).render("404", {pageTitle: "User not found"});
     }
     return res.render("users/profile", {
-        pageTitle: `${user.name}'s page`,
-        user: user
+        pageTitle: user.name,
+        user,
     });
 };
 

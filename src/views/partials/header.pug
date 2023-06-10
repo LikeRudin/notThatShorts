@@ -1,4 +1,5 @@
-header 
+header
+    img(src="/uploads/avatars/logo.jpg")#logo
     nav.basic
     ul
         li  
@@ -15,15 +16,12 @@ header
                 li 
                     a(href="/users/logout") Logout
                 li
-                    a(href=`/users/${loggedInUser._id}`)
+                    a(href=`/users/${loggedInUser._id}`) #{loggedInUser.username}
                         if loggedInUser.avatarUrl === ""
                             span 👻
                         else
                             if loggedInUser.avatarUrl
-                                if loggedInUser.avatarUrl.includes("github")
-                                    img.header__avatar(src=loggedInUser.avatarUrl)
-                                else
-                                    img.header__avatar(src=loggedInUser.avatarUrl)
+                                img.header__avatar(src=`/${loggedInUser.avatarUrl}`)
     else 
         nav
             ul 

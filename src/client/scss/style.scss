@@ -1,0 +1,13 @@
+@import "./config/_reset.scss";
+
+@import "./screens/video-page.scss";
+
+.header__avatar {
+    width: 100px;
+    height: 100px;
+}
+
+#logo{
+    width:150px;
+    height:150px;
+}

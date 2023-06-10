@@ -6,7 +6,7 @@ block content
         h1 #{user.name}'s profile
         ul 
             li 
-                img(src="/" + user.avatarUrl)
+                img(src="/" + user.avatarUrl).header__avatar
             li
                 span=user.email 
     div.user-uploaded
@@ -17,5 +17,3 @@ block content
                     +video(video)
                 else
                     span not uploaded yet
-
-        div.user-comments

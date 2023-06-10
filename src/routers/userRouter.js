@@ -1,5 +1,5 @@
 import express from "express";
-import { protectorMiddleware, publicOnlyMiddleware } from "../middlewares";
+import { protectorMiddleware, publicOnlyMiddleware, avatarUpload } from "../middlewares";
 import { finishGithubLogin, getChangePassword, getEdit, postChangePassword, postEdit, startGithubLogin, logout, getProfile } from "../controllers/userController";
 
 const userRouter = express.Router();
@@ -11,7 +11,7 @@ userRouter
     .route("/edit")
     .all(protectorMiddleware)
     .get(getEdit)
-    .post(postEdit);
+    .post(avatarUpload.single("avatar"), postEdit);
 
 userRouter
     .route("/change-password")

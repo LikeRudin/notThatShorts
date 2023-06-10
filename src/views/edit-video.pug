@@ -3,7 +3,7 @@ extends layout
 block content
     h3 Edit #{video.title}
 
-    form(method="POST").edit-profile__form
+    form(method="POST").edit-video__form
         div.labelinput
             label(for="edit-video_title") Title
             input(name="title", type="text", required, placeholder="Video Title", value=video.title)#edit-video_title
@@ -14,7 +14,7 @@ block content
             label(for="edit-video_hashtags") Hashtags
             input(name="hashtags", type="text", required, placeholder="Video hashtags, seperated by comma (,)", value=video.hashtags)#edit-video_hashtags
         input(type="submit", value="update video")
-        if !loggedInuser.socialOnly
+        if !loggedInUser.socialOnly
             div.edit-profile__password
                 a(href="change-password") Change password &rarr;
 
